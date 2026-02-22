@@ -620,10 +620,13 @@
             </div>
         </div>
     </footer>
-    <script src="charlas.js"></script>
+    <!-- charlas.json se carga dinámicamente vía fetch -->
     <script src="articulos.js"></script>
     <script src="videos.js"></script>
     <script>
+        // Datos de charlas (se llenan dinámicamente desde charlas.json)
+        let charlasData = [];
+
         // Renderizado dinámico de eventos
         function renderEvents() {
             const container = document.getElementById('events-container');
@@ -645,6 +648,14 @@
             const eventosAMostrar = charlasData.slice(0, 4);
 
             eventosAMostrar.forEach(evento => {
+                const hasLinkedIn = evento.linkedin_url && evento.linkedin_url !== '#' && evento.linkedin_url.trim() !== '';
+                const linkedInBadge = hasLinkedIn
+                    ? `<a href="${evento.linkedin_url}" target="_blank" class="inline-flex items-center gap-1 text-[#0077b5] text-[11px] font-semibold hover:underline mt-1">
+                           <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                           Ver perfil
+                       </a>`
+                    : '';
+
                 const card = `
                     <div class="group p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-primary/50 transition-all">
                         <div class="flex flex-col h-full">
@@ -657,12 +668,16 @@
                                     <span class="material-symbols-outlined text-2xl">event</span>
                                 </div>
                             </div>
-                            <h4 class="text-2xl font-bold mb-3 dark:text-white min-h-[5rem] flex items-center leading-tight">${evento.titulo}</h4>
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="material-symbols-outlined text-primary text-sm">person</span>
-                                <span class="text-slate-400 text-sm font-medium">Orador: ${evento.orador}</span>
+                            <h4 class="text-2xl font-bold mb-6 dark:text-white min-h-[4rem] flex items-center leading-tight">${evento.titulo}</h4>
+
+                            <!-- Speaker Info (sin foto) -->
+                            <div class="mb-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50">
+                                <span class="text-white font-bold text-sm">${evento.orador}</span>
+                                ${evento.speaker_description ? `<p class="text-slate-400 text-[11px] leading-tight mt-1">${evento.speaker_description}</p>` : ''}
+                                ${linkedInBadge}
                             </div>
-                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-grow">
+
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
                                 ${evento.descripcion_breve}
                             </p>
                             <a href="${evento.link_reserva}" 
@@ -725,8 +740,19 @@
             });
         }
 
-        // Ejecutar al cargar
-        document.addEventListener('DOMContentLoaded', () => {
+        // Ejecutar al cargar: primero fetch charlas.json, luego renderizar
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('charlas.json?v=' + Date.now());
+                if (res.ok) {
+                    charlasData = await res.json();
+                } else {
+                    charlasData = [];
+                }
+            } catch (e) {
+                charlasData = [];
+                console.warn('No se pudo cargar charlas.json:', e);
+            }
             renderEvents();
             renderArticles();
         });
