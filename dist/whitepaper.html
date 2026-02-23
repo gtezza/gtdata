@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whitepaper – GT Data Consulting – IA Estratégica</title>
+    <meta name="description"
+        content="IA Estratégica para Empresas que Deciden con Datos. Whitepaper de GT Data Consulting." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --brand-primary: #22d3ee;
+            --brand-dark: #071c24;
+            --text-main: #1a1a1a;
+            --text-muted: #4b5563;
+            --bg-white: #ffffff;
+            --border-light: rgba(0, 0, 0, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ── CONTAINER ── */
+        .page-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--bg-white);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── HEADER ── */
+        header {
+            padding: 24px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--brand-primary);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        header img {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-name {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.25rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .brand-gt {
+            color: var(--brand-dark);
+        }
+
+        .brand-consulting {
+            color: var(--brand-primary);
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: var(--brand-primary);
+            color: var(--brand-dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            background: var(--brand-dark);
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 60px;
+            background: linear-gradient(transparent, rgba(7, 28, 36, 0.9));
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--brand-primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            font-weight: 500;
+        }
+
+        /* ── CONTENT ── */
+        .content {
+            padding: 60px;
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--brand-dark);
+            margin-bottom: 24px;
+            border-left: 5px solid var(--brand-primary);
+            padding-left: 20px;
+            font-weight: 800;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--brand-primary);
+            font-weight: bold;
+        }
+
+        .strong-label {
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        /* ── GRID ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .feature-card {
+            border: 1px solid var(--border-light);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            color: var(--brand-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-light);
+            padding: 40px 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .contact-info div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .contact-icon {
+            color: var(--brand-primary);
+        }
+
+        .footer-copy {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page-container {
+                margin: 0;
+                box-shadow: none;
+                max-width: none;
+                width: 100%;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            header,
+            footer,
+            .content,
+            .hero-overlay {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .feature-card {
+                break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header,
+            .content,
+            footer {
+                padding: 30px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+        <!-- HEADER -->
+        <header>
+            <div class="header-left">
+                <img src="logo.png" alt="GT Data Consulting" />
+                <div class="brand-name">
+                    <span class="brand-gt">GT Data</span>
+                    <span class="brand-consulting">Consulting</span>
+                </div>
+            </div>
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+                </svg>
+                Descargar PDF / Imprimir
+            </button>
+        </header>
+
+        <!-- HERO -->
+        <div class="hero">
+            <img src="flyer.png" alt="GT Hero" />
+            <div class="hero-overlay">
+                <h1>IA Estratégica para <span>Empresas que Deciden con Datos</span></h1>
+                <p>Transformar con IA no es innovar. Es mejorar el resultado financiero.</p>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <section>
+                <p>Las pequeñas y medianas empresas enfrentan una presión creciente: competir con estructuras más
+                    ágiles, optimizar costos y tomar decisiones con mayor velocidad.</p>
+                <p>La Inteligencia Artificial ofrece oportunidades reales. Pero implementarla sin una estrategia clara
+                    puede generar complejidad sin impacto.</p>
+                <p><span class="strong-label">La IA debe impactar el balance.</span> Si no mejora eficiencia,
+                    rentabilidad o escalabilidad, no es estratégica.</p>
+            </section>
+
+            <section>
+                <h2>El Problema que Observamos</h2>
+                <ul>
+                    <li>Incorporan herramientas sin una hoja de ruta clara.</li>
+                    <li>Automatizan tareas aisladas sin rediseñar procesos.</li>
+                    <li>Acumulan datos sin convertirlos en decisiones accionables.</li>
+                    <li>Delegan tecnología sin involucrar a la dirección.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Nuestro Enfoque</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Diagnóstico de Impacto</h3>
+                        <p>Identificamos procesos críticos donde la IA puede generar mejoras medibles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Implementación Focalizada</h3>
+                        <p>Diseñamos soluciones alineadas a la estructura real del negocio.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Transferencia y Escalamiento</h3>
+                        <p>Capacitamos al equipo interno asegurando autonomía y sostenibilidad.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Data Explorer</h3>
+                        <p>Convertimos datos dispersos en información ejecutiva clara que facilita decisiones
+                            estratégicas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Automatización Inteligente</h3>
+                        <p>Reducimos tiempos operativos, minimizamos errores y optimizamos recursos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Capacitación Estratégica</h3>
+                        <p>Desarrollamos capacidades internas alineadas con objetivos reales de negocio.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>¿Para Quién es Este Enfoque?</h2>
+                <ul>
+                    <li>CEOs que buscan profesionalizar la gestión de datos.</li>
+                    <li>Equipos directivos que desean optimizar procesos clave.</li>
+                    <li>Empresas que quieren escalar sin perder control operativo.</li>
+                    <li>Organizaciones que desean incorporar IA con disciplina estratégica.</li>
+                </ul>
+            </section>
+
+            <section>
+                <p><span class="strong-label">Cierre:</span> La Inteligencia Artificial no es una tendencia tecnológica.
+                    Es una herramienta de ventaja competitiva cuando se implementa con foco en resultados y liderazgo
+                    ejecutivo.</p>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="GT Data Consulting" />
+                        <div class="brand-name">
+                            <span class="brand-gt">GT Data</span>
+                            <span class="brand-consulting">Consulting</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; text-align: left;">Impulsando la competitividad
+                        mediante datos e inteligencia aplicada.</p>
+                </div>
+                <div class="contact-info">
+                    <div><span class="contact-icon">✉</span> info@gtdata.com.ar</div>
+                    <div><span class="contact-icon">📱</span> +54 9 11 5597 0564</div>
+                    <div><span class="contact-icon">📍</span> Buenos Aires, Argentina</div>
+                    <div><span class="contact-icon">🌐</span> www.gtdata.com.ar</div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2026 GT Data Consulting · Todos los derechos reservados.
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
