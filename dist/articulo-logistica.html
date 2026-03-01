@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Agentes Autónomos en Logística | Artículos</title>
+    <meta name="description"
+        content="Análisis sobre cómo los agentes inteligentes están revolucionando la logística y optimizando rutas en tiempo real.">
+    <meta name="keywords"
+        content="IA Logística, Agentes Autónomos, Transformación Digital, Optimización de Rutas, GT Data Consulting">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://c2711356.ferozo.com/articulo-logistica.html">
+    <meta property="og:title" content="Agentes Autónomos en Logística | Artículos">
+    <meta property="og:description"
+        content="Cómo los agentes inteligentes están resolviendo cuellos de botella y optimizando rutas en tiempo real.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0db9f2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .reading-progress-bar {
+            height: 3px;
+            background: #0db9f2;
+            width: 35%;
+            /* Simulated progress */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+    <!-- Reading Progress Indicator -->
+    <div class="reading-progress-bar"></div>
+    <!-- Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <img src="logo.png" alt="GT Data Consulting Logo" class="h-8 w-auto">
+                        <span class="text-xl font-bold tracking-tight">GT Data <span
+                                class="text-primary">Consulting</span></span>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="index.html#servicios">Servicios</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="index.html#nosotros">Nosotros</a>
+                        <a class="text-sm font-medium text-primary" href="index.html#insights">Insights</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="index.html#contacto">Contacto</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-transparent focus-within:border-primary">
+                        <span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+                        <input class="bg-transparent border-none focus:ring-0 text-sm w-40 placeholder:text-slate-500"
+                            placeholder="Buscar artículos..." type="text" />
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-background-dark px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                        Empezar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Article Hero Section -->
+        <section class="relative py-20 overflow-hidden border-b border-slate-200 dark:border-slate-800">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/30 blur-[120px] rounded-full"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 relative">
+                <nav class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                    <a class="hover:underline" href="index.html">Inicio</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <a class="hover:underline" href="index.html#insights">Insights</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <a class="hover:underline" href="#">Logística Agéntica</a>
+                </nav>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tighter mb-8">
+                    Agentes Autónomos en <span class="text-primary">Logística Moderna</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <div class="flex items-center gap-3">
+                        <div class="size-12 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 bg-cover bg-center"
+                            data-alt="Retrato de Gerardo Tezza, Especialista en Datos e IA"
+                            style="background-image: url('logo.png')">
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">GT Data Team</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Consultoría en Inteligencia Artificial
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">calendar_today</span>
+                            15 de Febrero, 2026
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            6 min de lectura
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Article Content -->
+        <article class="max-w-3xl mx-auto px-4 py-16">
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+                <p class="text-xl leading-relaxed text-slate-600 dark:text-slate-300 mb-10 font-medium">
+                    La optimización logística está experimentando un cambio de paradigma con la llegada de los agentes
+                    autónomos. Estos sistemas inteligentes ya no solo reaccionan a datos históricos, sino que toman
+                    decisiones proactivas para resolver cuellos de botella antes de que ocurran.
+                </p>
+                <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-2">
+                    <span class="w-8 h-1 bg-primary rounded-full"></span>
+                    Optimización de Rutas en Tiempo Real
+                </h2>
+                <p class="mb-6">
+                    A diferencia de los sistemas tradicionales, los agentes inteligentes pueden procesar variables
+                    dinámicas como el tráfico en vivo, condiciones climáticas y cambios repentinos en la demanda para
+                    redirigir flotas completas de manera eficiente, reduciendo costos operativos significativamente.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-2">
+                    <span class="w-8 h-1 bg-primary rounded-full"></span>
+                    Gestión de Almacenes Inteligente
+                </h2>
+                <p class="mb-6">
+                    La integración de lógica agéntica en el control de inventario permite una coordinación perfecta
+                    entre la entrada de mercancía y la salida de pedidos, eliminando errores de picking y optimizando el
+                    espacio físico del almacén.
+                </p>
+
+                <div class="bg-primary/5 border-l-4 border-primary p-6 my-10 rounded-r-xl">
+                    <p class="text-slate-700 dark:text-slate-200 font-medium italic">
+                        "La logística del futuro no se basa en mover paquetes, sino en orquestar información inteligente
+                        de manera autónoma."
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="GT Data Consulting Logo" class="h-10 w-auto">
+                    <span class="text-lg font-bold tracking-tighter text-white uppercase">GT Data <span
+                            class="text-primary">Consulting</span></span>
+                </div>
+                <div class="flex flex-wrap gap-8 text-slate-500 text-sm">
+                    <a class="hover:text-primary transition-colors" href="al_code.html">Aviso Legal</a>
+                    <a class="hover:text-primary transition-colors" href="plcode.html">Privacidad</a>
+                    <a class="hover:text-primary transition-colors" href="cookies_code.html">Cookies</a>
+                    <a class="hover:text-primary transition-colors"
+                        href="https://www.linkedin.com/in/gtezza">LinkedIn</a>
+                    <a class="hover:text-primary transition-colors"
+                        href="https://www.youtube.com/@GTDataConsulting">YouTube</a>
+                </div>
+            </div>
+            <div
+                class="text-slate-600 text-xs flex flex-col md:flex-row justify-between border-t border-slate-800/50 pt-8 gap-4">
+                <p>© 2026 GT Data Consulting. Todos los derechos reservados.</p>
+                <p>Hecho con precisión por mentes y máquinas.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

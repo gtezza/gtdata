@@ -14,7 +14,16 @@ const articulosData = [
         "fecha": "15 de Febrero, 2026",
         "resumen": "Cómo los agentes inteligentes están resolviendo cuellos de botella y optimizando rutas en tiempo real.",
         "imagen": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-        "link": "#",
+        "link": "articulo-logistica.html",
         "categoria": "Logística"
+    },
+    {
+        "id": 3,
+        "titulo": "El Auge del Vibe Coding: La Nueva Era del Desarrollo",
+        "fecha": "01 de Marzo, 2026",
+        "resumen": "Descubre cómo el Vibe Coding y la IA agéntica están transformando la agilidad analítica y el desarrollo de software moderno.",
+        "imagen": "vibe_coding_feature_image_1772405609222.png",
+        "link": "vivecoding.html",
+        "categoria": "IA & Desarrollo"
     }
 ];
