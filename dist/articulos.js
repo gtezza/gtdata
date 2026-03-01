@@ -22,7 +22,7 @@ const articulosData = [
         "titulo": "El Auge del Vibe Coding: La Nueva Era del Desarrollo",
         "fecha": "01 de Marzo, 2026",
         "resumen": "Descubre cómo el Vibe Coding y la IA agéntica están transformando la agilidad analítica y el desarrollo de software moderno.",
-        "imagen": "vibe_coding_feature_image_1772405609222.png",
+        "imagen": "foto.jpg",
         "link": "vivecoding.html",
         "categoria": "IA & Desarrollo"
     }
